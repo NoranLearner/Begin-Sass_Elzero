@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+$gridNum: 12;
+
+%grid{
+    float: left;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@for $i from 1 through $gridNum{
+    .col-#{$i} {
+        width: (100% / ($gridNum / $i));
+        @extend %grid;
+    }
+}
